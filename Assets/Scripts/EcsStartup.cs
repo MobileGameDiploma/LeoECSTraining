@@ -1,7 +1,9 @@
 using Leopotam.EcsLite;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using Voody.UniLeo.Lite;
 
 public class EcsStartup : MonoBehaviour
 {
@@ -13,8 +15,8 @@ public class EcsStartup : MonoBehaviour
         // Создаем окружение, подключаем системы.
         _world = new EcsWorld();
         _systems = new EcsSystems(_world);
-        
         _systems
+            .ConvertScene()
             .Add(new Leopotam.EcsLite.UnityEditor.EcsWorldDebugSystem())
             .Add(new IncrementSystem())
             .Init();
