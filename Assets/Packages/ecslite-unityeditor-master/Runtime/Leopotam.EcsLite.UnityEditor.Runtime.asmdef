@@ -1,11 +1,12 @@
 {
-    "name": "GameAssembler",
-    "rootNamespace": "",
+    "name": "Leopotam.EcsLite.UnityEditor.Runtime",
+    "rootNamespace": "Leopotam.EcsLite.UnityEditor",
     "references": [
-        "GUID:e59bf9fc7d5a44b18a819a92edd46163",
-        "GUID:a22362b82293644e1bbe51356c008d63"
+        "Leopotam.EcsLite"
     ],
-    "includePlatforms": [],
+    "includePlatforms": [
+        "Editor"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
