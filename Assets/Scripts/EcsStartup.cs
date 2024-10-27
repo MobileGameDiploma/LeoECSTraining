@@ -19,6 +19,7 @@ public class EcsStartup : MonoBehaviour
             .ConvertScene()
             .Add(new Leopotam.EcsLite.UnityEditor.EcsWorldDebugSystem())
             .Add(new IncrementSystem())
+            .Add(new ZigZagMovementSystem())
             .Init();
     }
 
