@@ -1,10 +1,7 @@
 {
-    "name": "GameAssembler",
-    "rootNamespace": "",
-    "references": [
-        "GUID:a22362b82293644e1bbe51356c008d63",
-        "GUID:e59bf9fc7d5a44b18a819a92edd46163"
-    ],
+    "name": "Leopotam.EcsLite",
+    "rootNamespace": "Leopotam.EcsLite",
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

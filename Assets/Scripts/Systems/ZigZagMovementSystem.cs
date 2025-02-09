@@ -2,13 +2,14 @@ using Leopotam.EcsLite;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 
 public class ZigZagMovementSystem : IEcsInitSystem, IEcsRunSystem
 {
     public EcsPool<MovementComponent> CounterComponents;
     public EcsFilter CounterComponentFilter;
-
+    
+    private float time;
+    
     public void Init(IEcsSystems systems)
     {
         var world = systems.GetWorld();
@@ -33,10 +34,16 @@ public class ZigZagMovementSystem : IEcsInitSystem, IEcsRunSystem
     {
         /*        Vector3 pos = Vector3.up * Time.deltaTime * speed;
                 transform.position = (pos + Vector3.forward) * Mathf.Sin(Time.time) * magnitude;*/
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        /*transform.Translate(Vector3.forward * speed * Time.deltaTime);
 
         float offsetX = Mathf.Sin(Time.time * frequency) * amplitude;
 
-        transform.position = new Vector3(transform.position.x + offsetX, transform.position.y, transform.position.z);
+        transform.position = new Vector3(transform.position.x + offsetX, transform.position.y, transform.position.z); */
+        time += Time.deltaTime;
+        
+        float xOffset = Mathf.Sin(time * frequency) * amplitude;
+
+        
+        transform.position += new Vector3(xOffset, 0, speed * Time.deltaTime);
     }
 }

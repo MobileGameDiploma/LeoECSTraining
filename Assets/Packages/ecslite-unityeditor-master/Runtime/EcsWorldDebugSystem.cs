@@ -7,6 +7,7 @@
 
 using System;
 using System.Collections.Generic;
+using Leopotam.EcsLite;
 using UnityEngine;
 using Object = UnityEngine.Object;
 

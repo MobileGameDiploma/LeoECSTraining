@@ -2,7 +2,8 @@
     "name": "Leopotam.EcsLite.UnityEditor.Runtime",
     "rootNamespace": "Leopotam.EcsLite.UnityEditor",
     "references": [
-        "Leopotam.EcsLite"
+        "Leopotam.EcsLite",
+        "Leopotam.Ecs"
     ],
     "includePlatforms": [
         "Editor"

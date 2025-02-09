@@ -8,16 +8,15 @@ using Voody.UniLeo.Lite;
 public class EcsStartup : MonoBehaviour
 {
     EcsWorld _world;
-    IEcsSystems _systems;
+    EcsSystems _systems;
 
     void Start()
     {
-        // Создаем окружение, подключаем системы.
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
         _world = new EcsWorld();
         _systems = new EcsSystems(_world);
         _systems
             .ConvertScene()
-            .Add(new Leopotam.EcsLite.UnityEditor.EcsWorldDebugSystem())
             .Add(new IncrementSystem())
             .Add(new ZigZagMovementSystem())
             .Init();
@@ -25,19 +24,19 @@ public class EcsStartup : MonoBehaviour
 
     void Update()
     {
-        // Выполняем все подключенные системы.
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
         _systems?.Run();
     }
 
     void OnDestroy()
     {
-        // Уничтожаем подключенные системы.
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
         if (_systems != null)
         {
             _systems.Destroy();
             _systems = null;
         }
-        // Очищаем окружение.
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
         if (_world != null)
         {
             _world.Destroy();
